@@ -360,10 +360,12 @@ header.home {
     header.home .feature > div img {
       height: auto;
       width: auto;
-      min-width: 100%;
-      min-height: 100%;
       border: 5px solid;
       margin: 20px 0; }
+      @media (min-width: 1024px) {
+        header.home .feature > div img {
+          min-width: 100%;
+          min-height: 100%; } }
       @media screen and (min-width: 1024px) {
         header.home .feature > div img {
           width: 100%; } }
