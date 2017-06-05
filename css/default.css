@@ -450,7 +450,9 @@ footer {
   .modal-content .modal-header {
     padding-right: 50px; }
   .modal-content .modal-body {
-    padding: 0 50px; }
+    padding: 0 50px;
+    max-height: 90vh;
+    overflow: auto; }
   .modal-content img {
     float: left;
     margin: 0 20px 10px 0; }
