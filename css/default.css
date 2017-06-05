@@ -451,7 +451,7 @@ footer {
     padding-right: 50px; }
   .modal-content .modal-body {
     padding: 0 50px;
-    max-height: 90vh;
+    max-height: 80vh;
     overflow: auto; }
   .modal-content img {
     float: left;
