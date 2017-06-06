@@ -365,7 +365,8 @@ header.home {
       @media (min-width: 1024px) {
         header.home .feature > div img {
           min-width: 100%;
-          min-height: 100%; } }
+        } 
+      }
       @media screen and (min-width: 1024px) {
         header.home .feature > div img {
           width: 100%; } }
