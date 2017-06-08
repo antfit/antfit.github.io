@@ -471,13 +471,17 @@ body.modal-open .modal.in {
   background: #fff;
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.05);
   border-top: 5px solid #0a5ae4; }
-  .event .row {
-    padding: 43px 0; }
   @media screen and (max-width: 1023px) {
     .event .event-cta {
       text-align: center; }
       .event .event-cta a {
         margin-top: 20px; } }
+  @media screen and (max-width: 767px) {
+    .event .row {
+      padding: 25px 0; } }
+  @media screen and (min-width: 768px) {
+    .event .row {
+      padding: 43px 0; } }
   .event .event-detail {
     font-size: 20px;
     font-family: "Heebo", sans-serif;
@@ -550,7 +554,7 @@ section.map:before {
   position: relative;
   z-index: 1000;
   top: 0;
-  box-shadow: -1px 6px 12px 0px rgba(85, 0, 26, 0.5);
+  box-shadow: 0px 6px 9px 0px rgba(85, 0, 26, 0.3);
   /*box-shadow: 1px 1px 6px rgba(85, 0, 26, 0.12);*/ }
 
 .global {
@@ -600,6 +604,8 @@ section.map:before {
 
 .row {
   padding: 1em 0; }
+  .row.banner {
+    padding-bottom: 35px; }
 
 .icon-angle-left, .icon-angle-up, .icon-angle-down {
   color: #d91515; }
@@ -662,7 +668,7 @@ main h2 {
   font-size: 30px;
   line-height: 28px;
   font-weight: 700;
-  margin: 60px 0; }
+  margin: 60px 0 40px 0; }
   @media screen and (max-width: 767px) {
     main h2 {
       font-size: 24px;
@@ -821,6 +827,9 @@ main.artworks-inner .contentWrapper > section {
   @media screen and (min-width: 1024px) {
     main.artworks-inner .contentWrapper > section .image {
       padding-left: 50px; } }
+
+#gallery {
+  padding-bottom: 35px; }
 
 body.various .contentWrapper {
   height: 90vh; }
