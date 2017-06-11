@@ -118,10 +118,10 @@
     "@screen-xs": "480px",
     "@screen-xs-min": "@screen-xs",
     "@screen-phone": "@screen-xs-min",
-    "@screen-sm": "600px",
+    "@screen-sm": "768px",
     "@screen-sm-min": "@screen-sm",
     "@screen-tablet": "@screen-sm-min",
-    "@screen-md": "960px",
+    "@screen-md": "992px",
     "@screen-md-min": "@screen-md",
     "@screen-desktop": "@screen-md-min",
     "@screen-lg": "1200px",
@@ -396,5 +396,5 @@
   "js": [
     "modal.js"
   ],
-  "customizerUrl": "http://getbootstrap.com/customize/?id=d7eb248c0e0adbcff3363b0e1e7bedeb"
+  "customizerUrl": "http://getbootstrap.com/customize/?id=4f28a384f5235b8a5541b23e8ea7ca1a"
 }

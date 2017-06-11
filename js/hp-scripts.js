@@ -89,7 +89,7 @@ $(document).ready(function() {
     var myLatlng = new google.maps.LatLng(lat,lng);
     var map, marker, infowindow;
     var image = 'imgs/marker.png';
-    var zoomLevel = parseInt($('#'+obj).attr("data-zoom") ,12);
+    var zoomLevel = parseInt($('#'+obj).attr("data-zoom") ,10);
     var styles = [{"featureType":"landscape","stylers":[{"saturation":" "},{"lightness":" "},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":" "},{"lightness":" "},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":" "},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":" "},{"lightness":" "},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":" "},{"lightness":" "},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":" "},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":" "},{"saturation":" "}]},{"featureType":"water","elementType":"geometry","stylers":[{"lightness":" "},{"saturation":" "}]}]
     var styledMap = new google.maps.StyledMapType(styles,{name: "Styled Map"}); 
     var mapOptions = {
