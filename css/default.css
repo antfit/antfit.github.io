@@ -550,6 +550,9 @@ img.img-block {
   text-transform: uppercase;
   font-family: "Heebo", sans-serif; }
 
+.btn-primary:hover, .btn-primary:focus {
+  background: #094dc3; }
+
 .btn-primary.btn-transparent, .btn-primary.btn-transparent:hover, .btn-primary.btn-transparent:focus {
   display: inline-block;
   border: 1px solid white;
