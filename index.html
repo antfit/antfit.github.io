@@ -7,18 +7,17 @@
         <meta name="description" content="this is the description">
         <meta name="viewport" content="width=device-width">
 
-        <link href='https://fonts.googleapis.com/css?family=Dosis:400,300,500' rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/css?family=Heebo:300,400,700" rel="stylesheet">
         <link rel="stylesheet" href="css/bootstrap.min.css?ver=2">
         <link rel="stylesheet" href="css/default.css">
 
         
-            <link rel="stylesheet" type="text/css" href="css/grid-gallery/demo.css" />
-            <link rel="stylesheet" type="text/css" href="css/grid-gallery/component.css" />
+            <!--link rel="stylesheet" type="text/css" href="css/grid-gallery/demo.css" />
+            <link rel="stylesheet" type="text/css" href="css/grid-gallery/component.css" /-->
         
 
-        <link rel="stylesheet" href="css/swiper.min.css">
-        <link rel="stylesheet" href="css/fontello.css">
+        <!--link rel="stylesheet" href="css/swiper.min.css">
+        <link rel="stylesheet" href="css/fontello.css"-->
         <script type="text/javascript">
             /* Modernizr 2.8.3 (Custom Build) | MIT & BSD
              * Build: http://modernizr.com/download/#-fontface-backgroundsize-borderimage-borderradius-boxshadow-flexbox-hsla-multiplebgs-opacity-rgba-textshadow-cssanimations-csscolumns-generatedcontent-cssgradients-cssreflections-csstransforms-csstransforms3d-csstransitions-applicationcache-canvas-canvastext-draganddrop-hashchange-history-audio-video-indexeddb-input-inputtypes-localstorage-postmessage-sessionstorage-websockets-websqldatabase-webworkers-geolocation-inlinesvg-smil-svg-svgclippaths-touch-webgl-shiv-mq-cssclasses-addtest-prefixed-teststyles-testprop-testallprops-hasevent-prefixes-domprefixes-load
@@ -277,6 +276,49 @@
     </div>
   </div>
 </div>
+                <script type="text/javascript">
+                    $(document).ready(function() {
+                        var obj = 'map-canvas-contact';
+                        var lat = $('#'+obj).attr("data-lat");
+                        var lng = $('#'+obj).attr("data-lng");
+                        var contentString = $('#'+obj).attr("data-string");
+                        var myLatlng = new google.maps.LatLng(lat,lng);
+                        var map, marker, infowindow;
+                        var image = 'imgs/marker.png';
+                        var zoomLevel = parseInt($('#'+obj).attr("data-zoom") ,10);
+                        var styles = [{"featureType":"landscape","stylers":[{"saturation":" "},{"lightness":" "},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":" "},{"lightness":" "},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":" "},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":" "},{"lightness":" "},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":" "},{"lightness":" "},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":" "},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":" "},{"saturation":" "}]},{"featureType":"water","elementType":"geometry","stylers":[{"lightness":" "},{"saturation":" "}]}]
+                        var styledMap = new google.maps.StyledMapType(styles,{name: "Styled Map"}); 
+                        var mapOptions = {
+                          zoom: zoomLevel,
+                          disableDefaultUI: true,
+                          center: myLatlng,
+                              scrollwheel: false,
+                          mapTypeControlOptions: {
+                              mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+                          },
+                          zoomControls: true
+                        }
+                        
+                        map = new google.maps.Map(document.getElementById(obj), mapOptions);
+
+                        map.mapTypes.set('map_style', styledMap);
+                        map.setMapTypeId('map_style');
+
+                        infowindow = new google.maps.InfoWindow({
+                          content: contentString
+                        });      
+                          
+                          marker = new google.maps.Marker({
+                          position: myLatlng,
+                          map: map,
+                          icon: image
+                        });
+
+                        google.maps.event.addListener(marker, 'click', function() {
+                          infowindow.open(map,marker);
+                        });
+                    })
+                </script>
             </div>
         </main>
     </div>
@@ -313,8 +355,8 @@
                                 downloadJS("js/vendor/swiper.jquery.min.js?ver=4", function () {
                                     if($('#home-wrapper').length){
                                         downloadJS("https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAQjBGbPuP-0cqGL1RSfSDU-6eC2xWGchA", function () {
-                                            downloadJS("js/hp-scripts.js?ver=4", function () {
-                                                downloadJS("js/vendor/grid-gallery/imagesloaded.pkgd.min.js", function () {
+                                            //downloadJS("js/hp-scripts.js?ver=4", function () {
+                                                //downloadJS("js/vendor/grid-gallery/imagesloaded.pkgd.min.js", function () {
                                                     //downloadJS("js/vendor/grid-gallery/masonry.pkgd.min.js", function () {
                                                         //downloadJS("js/vendor/grid-gallery/classie.js", function () {
                                                             //downloadJS("js/vendor/grid-gallery/cbpGridGallery.js", function () {
@@ -324,8 +366,8 @@
                                                             //});
                                                         //});
                                                     //});
-                                                });
-                                            });
+                                                //});
+                                            //});
                                         });
                                     }
                                     else{
