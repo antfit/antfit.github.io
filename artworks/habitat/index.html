@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
 		<title>habitat</title>
-        <meta name="description" content="this is the description">
+        <meta name="description" content="Fintan O'Byrne - Art Exhibition - 6pm-9pm Copper House Gallery Dublin, 28th September">
         <meta name="viewport" content="width=device-width">
 
         <link href="https://fonts.googleapis.com/css?family=Heebo:300,400,700" rel="stylesheet">
@@ -13,8 +13,8 @@
 
         
 
-        <!--link rel="stylesheet" href="css/swiper.min.css">
-        <link rel="stylesheet" href="css/fontello.css"-->
+        <link rel="stylesheet" href="css/swiper.min.css">
+        <link rel="stylesheet" href="css/fontello.css">
         <script type="text/javascript">
             /* Modernizr 2.8.3 (Custom Build) | MIT & BSD
              * Build: http://modernizr.com/download/#-fontface-backgroundsize-borderimage-borderradius-boxshadow-flexbox-hsla-multiplebgs-opacity-rgba-textshadow-cssanimations-csscolumns-generatedcontent-cssgradients-cssreflections-csstransforms-csstransforms3d-csstransitions-applicationcache-canvas-canvastext-draganddrop-hashchange-history-audio-video-indexeddb-input-inputtypes-localstorage-postmessage-sessionstorage-websockets-websqldatabase-webworkers-geolocation-inlinesvg-smil-svg-svgclippaths-touch-webgl-shiv-mq-cssclasses-addtest-prefixed-teststyles-testprop-testallprops-hasevent-prefixes-domprefixes-load
@@ -178,25 +178,20 @@
                                 downloadJS("js/vendor/swiper.jquery.min.js?ver=4", function () {
                                     if($('#home-wrapper').length){
                                         downloadJS("https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAQjBGbPuP-0cqGL1RSfSDU-6eC2xWGchA", function () {
-                                            //downloadJS("js/hp-scripts.js?ver=4", function () {
-                                                //downloadJS("js/vendor/grid-gallery/imagesloaded.pkgd.min.js", function () {
-                                                    //downloadJS("js/vendor/grid-gallery/masonry.pkgd.min.js", function () {
-                                                        //downloadJS("js/vendor/grid-gallery/classie.js", function () {
-                                                            //downloadJS("js/vendor/grid-gallery/cbpGridGallery.js", function () {
-                                                                //new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
+                                            downloadJS("js/hp-scripts.js?ver=4", function () {
+                                                downloadJS("js/vendor/grid-gallery/imagesloaded.pkgd.min.js", function () {
+                                                    downloadJS("js/vendor/grid-gallery/masonry.pkgd.min.js", function () {
+                                                        downloadJS("js/vendor/grid-gallery/classie.js", function () {
+                                                            downloadJS("js/vendor/grid-gallery/cbpGridGallery.js", function () {
+                                                                new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
                                                                 downloadJS("js/vendor/bootstrap.min.js", function () {
                                                                     onPageReady();
                                                                 });
-                                                            //});
-                                                        //});
-                                                    //});
-                                                //});
-                                            //});
-                                        });
-                                    }
-                                    else{
-                                        downloadJS("js/scripts.js?ver=4", function () {
-                                            onPageReady();
+                                                            });
+                                                        });
+                                                    });
+                                                });
+                                            });
                                         });
                                     }
                                 });
