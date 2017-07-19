@@ -178,7 +178,7 @@
 	}
 }
 
-@media screen and (max-height: 1599px){
+@media screen and (max-width: 1599px){
 	.slideshow li figure {
 		background: #fff;
 	}
