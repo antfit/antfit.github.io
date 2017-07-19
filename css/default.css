@@ -365,7 +365,8 @@ header.home {
       @media screen and (max-width: 1599px) {
         header.home .feature > div img {
           width: auto;
-          max-height: 90vh; } }
+          max-height: 90vh;
+          max-width: 100%; } }
       @media screen and (min-width: 1600px) {
         header.home .feature > div img {
           width: 100%;
@@ -553,6 +554,9 @@ body {
 
 #map-canvas-contact {
   height: 600px; }
+  @media screen and (max-width: 599px) {
+    #map-canvas-contact {
+      height: 350px; } }
 
 img.img-block {
   margin: 20px 0; }
