@@ -258,7 +258,7 @@ span.nav-close:before {
 }
 
 
-@media screen and (min-width: 1600px){
+@media screen and (min-width: 2000px){
 	span.nav-close:before {
 		font-size: 1.5em;
 	}
