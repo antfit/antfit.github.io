@@ -178,7 +178,11 @@
 	}
 }
 
-
+@media screen and (max-height: 1599px){
+	.slideshow li figure {
+		background: #fff;
+	}
+}
 
 .slideshow figcaption {
 	display: none;
@@ -319,9 +323,6 @@ span.nav-close:before {
 		top: 0;
 		left: 0;
 		margin: 0;
-	}
-	.slideshow li figure {
-		background: #fff;
 	}
 
 	.slideshow li figure figcaption {
