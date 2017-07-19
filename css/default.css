@@ -265,7 +265,7 @@ header.home, .fixed-background {
   width: 100%; }
   @media screen and (min-width: 641px) and (max-width: 1023px) and (min-height: 950px) {
     header.home, .fixed-background {
-      height: 50vh; } }
+      height: 55vh; } }
   @media screen and (min-width: 1024px) {
     header.home, .fixed-background {
       height: 100vh;
