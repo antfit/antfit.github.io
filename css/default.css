@@ -336,10 +336,12 @@ header.home {
         font-size: 32px; } }
     header.home h1 img.logo {
       width: 150px;
+      height: 150px;
       margin-bottom: 30px; }
       @media screen and (max-width: 767px) {
         header.home h1 img.logo {
-          width: 100px; } }
+          width: 100px;
+          height: 100px; } }
   header.home p {
     font-size: 24px;
     line-height: 48px;

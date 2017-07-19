@@ -36,7 +36,7 @@
 
 /* Grid style */
 .grid-wrap {
-	max-width: 69em;
+	max-width: 960px;
 	margin: 0 auto;
 	padding: 0;
 }
@@ -62,8 +62,8 @@
 
 /* Slideshow style */
 .slideshow {
+	background: rgba(0, 0, 0, 0.85);
 	position: fixed;
-	background: #fff;
 	width: 100%;
 	height: 100%;
 	top: 0;
@@ -143,8 +143,7 @@
 	position: relative;
 	width: 100%;
 	height: 100%;
-	background: #fff;
-	border: 20px solid #fff;
+	border: 20px solid transparent;
 	overflow: hidden;
 }
 
@@ -182,6 +181,7 @@
 
 
 .slideshow figcaption {
+	display: none;
 	padding-bottom: 20px;
 }
 
@@ -218,7 +218,7 @@
 .slideshow nav span.nav-close {
 	top: 0;
 	right: 0;
-	padding: 0.5em 1em;
+	padding: 0.25em 0.5em;	
 	color: #31373a;
 }
 
@@ -247,10 +247,19 @@ span.nav-close:before {
 	content: "\e602";
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 768px){
 	span.nav-close:before {
-		color: #333; 
+		color: #dedede; 
+	}
+}
+
+
+@media screen and (min-width: 1280px){
+	span.nav-close:before {
 		font-size: 1.5em;
+	}
+	.slideshow nav span.nav-close {
+		padding: 0.5em 1em;	
 	}
 }
 
@@ -293,10 +302,15 @@ span.nav-close:before {
 
 /* Example media queries (reduce number of columns and change slideshow layout) */
 
-@media screen and (max-width: 60em) {
+@media screen and (max-width: 767px) {
 	/* responsive columns; see "Element sizing" on http://masonry.desandro.com/options.html */
 	.grid li {
-		width: 33.3%;
+		width: 100%;
+	}
+
+	.grid li img{
+		max-width: 340px;
+		margin: 0 auto;
 	}
 
 	.slideshow li {
@@ -305,6 +319,13 @@ span.nav-close:before {
 		top: 0;
 		left: 0;
 		margin: 0;
+	}
+	.slideshow li figure {
+		background: #fff;
+	}
+
+	.slideshow li figure figcaption {
+		display: none;
 	}
 
 	.slideshow li figure img {
@@ -318,20 +339,4 @@ span.nav-close:before {
 		padding: 0.3em;
 	}
 
-	.info-keys {
-		display: none;
-	}
-
-}
-
-@media screen and (max-width: 35em) {
-	.grid li {
-		width: 50%;
-	}
-}
-
-@media screen and (max-width: 24em) {
-	.grid li {
-		width: 100%;
-	}
 }
