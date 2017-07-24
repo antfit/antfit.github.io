@@ -60,6 +60,9 @@
 	</p-->
 	<h2>Check out some of the artworks</h2>
 	<div id="grid-gallery" class="grid-gallery">
+		<svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+		   <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+		</svg>
 		<section class="grid-wrap">
 			<ul class="grid">
 				<li class="grid-sizer"></li>
@@ -308,6 +311,10 @@
             }
 
             function onPageReady(){
+
+                $( '.spinner' ).hide();
+                $( 'section.grid-wrap' ).css("visibility", "visible");
+
                 enquire.register("screen and (min-width: 1200px)", {
                     match: function () {
                         downloadJS("js/vendor/jquery.noisy.min.js", function () {

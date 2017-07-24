@@ -362,12 +362,12 @@ header.home {
       float: right;
       border: 5px solid;
       margin: 20px 0; }
-      @media screen and (max-width: 1599px) {
+      @media screen and (min-width: 1024px) {
         header.home .feature > div img {
           width: auto;
           max-height: 90vh;
           max-width: 100%; } }
-      @media screen and (min-width: 1600px) {
+      @media screen and (min-width: 1600px) and (min-height: 970px) {
         header.home .feature > div img {
           width: 100%;
           max-height: 900px; } }
@@ -533,6 +533,44 @@ body.modal-open .modal.in {
       background: url(imgs/time.svg) no-repeat center left; }
     .event .event-detail.venue {
       background: url(imgs/location.svg) no-repeat center left; }
+
+.spinner {
+  margin-top: 80px;
+  animation: rotator 1.4s linear infinite; }
+
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(270deg); } }
+.path {
+  stroke-dasharray: 187;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite; }
+
+@keyframes colors {
+  0% {
+    stroke: #4285F4; }
+  25% {
+    stroke: #DE3E35; }
+  50% {
+    stroke: #F7C223; }
+  75% {
+    stroke: #1B9A59; }
+  100% {
+    stroke: #4285F4; } }
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 187; }
+  50% {
+    stroke-dashoffset: 46.75;
+    transform: rotate(135deg); }
+  100% {
+    stroke-dashoffset: 187;
+    transform: rotate(450deg); } }
+.grid-wrap {
+  visibility: hidden; }
 
 @font-face {
   font-family: 'Glyphicons Halflings';
@@ -718,6 +756,7 @@ main h1 {
     font-size: 1.35em;
     color: #d91515; }
 main h2 {
+  clear: both;
   font-size: 30px;
   line-height: 28px;
   font-weight: 700;

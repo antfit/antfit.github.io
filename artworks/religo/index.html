@@ -211,6 +211,10 @@
             }
 
             function onPageReady(){
+
+                $( '.spinner' ).hide();
+                $( 'section.grid-wrap' ).css("visibility", "visible");
+
                 enquire.register("screen and (min-width: 1200px)", {
                     match: function () {
                         downloadJS("js/vendor/jquery.noisy.min.js", function () {
