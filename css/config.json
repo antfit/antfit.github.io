@@ -391,10 +391,14 @@
     "glyphicons.less",
     "jumbotron.less",
     "close.less",
-    "modals.less"
+    "component-animations.less",
+    "modals.less",
+    "carousel.less"
   ],
   "js": [
-    "modal.js"
+    "carousel.js",
+    "modal.js",
+    "transition.js"
   ],
-  "customizerUrl": "http://getbootstrap.com/customize/?id=4f28a384f5235b8a5541b23e8ea7ca1a"
+  "customizerUrl": "https://getbootstrap.com/docs/3.3/customize/?id=4a15a4c655a47137488f533c86accc5e"
 }

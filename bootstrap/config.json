@@ -118,10 +118,10 @@
     "@screen-xs": "480px",
     "@screen-xs-min": "@screen-xs",
     "@screen-phone": "@screen-xs-min",
-    "@screen-sm": "600px",
+    "@screen-sm": "768px",
     "@screen-sm-min": "@screen-sm",
     "@screen-tablet": "@screen-sm-min",
-    "@screen-md": "960px",
+    "@screen-md": "992px",
     "@screen-md-min": "@screen-md",
     "@screen-desktop": "@screen-md-min",
     "@screen-lg": "1200px",
@@ -388,8 +388,17 @@
     "grid.less",
     "buttons.less",
     "responsive-utilities.less",
-    "jumbotron.less"
+    "glyphicons.less",
+    "jumbotron.less",
+    "close.less",
+    "component-animations.less",
+    "modals.less",
+    "carousel.less"
   ],
-  "js": [],
-  "customizerUrl": "http://getbootstrap.com/customize/?id=1033a8bf4cce7cf7993bacc633fa325a"
+  "js": [
+    "carousel.js",
+    "modal.js",
+    "transition.js"
+  ],
+  "customizerUrl": "https://getbootstrap.com/docs/3.3/customize/?id=4a15a4c655a47137488f533c86accc5e"
 }

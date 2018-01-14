@@ -9,57 +9,6 @@
 	font-style: normal;
 } /* Made with http://icomoon.io/app */
 
-/* General style */
-.grid-gallery ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-.grid-gallery figure {
-	margin: 0;
-}
-
-.grid-gallery figure img {
-	display: block;
-	width: 100%;
-	/*
-	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
-	/*filter: gray; /* IE6-9 */
-	/*-webkit-filter: grayscale(60%); /* Chrome 19+ & Safari 6+ */
-}
-
-.grid-gallery figure img:hover {
-  filter: none;
-  -webkit-filter: grayscale(0%);
-}
-
-/* Grid style */
-.grid-wrap {
-	max-width: 850px;
-	margin: 0 auto;
-	padding: 0;
-}
-
-.grid {
-	margin: 0 auto;
-}
-
-.grid li {
-	width: 33.33333%;
-	float: left;
-	cursor: pointer;
-}
-
-.grid figure {
-	padding: 15px;
-}
-
-.grid figcaption {
-	background: #e4e4e4;
-	padding: 25px;
-}
-
 /* Slideshow style */
 .slideshow {
 	background: rgba(0, 0, 0, 0.85);
@@ -302,14 +251,6 @@ span.nav-close:before {
 
 @media screen and (max-width: 767px) {
 	/* responsive columns; see "Element sizing" on http://masonry.desandro.com/options.html */
-	.grid li {
-		width: 100%;
-	}
-
-	.grid li img{
-		max-width: 340px;
-		margin: 0 auto;
-	}
 
 	.slideshow li {
 		width: 100%;

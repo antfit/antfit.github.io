@@ -23,9 +23,10 @@
 .grid-gallery figure img {
 	display: block;
 	width: 100%;
+	/*
 	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
-	filter: gray; /* IE6-9 */
-	-webkit-filter: grayscale(60%); /* Chrome 19+ & Safari 6+ */
+	/*filter: gray; /* IE6-9 */
+	/*-webkit-filter: grayscale(60%); /* Chrome 19+ & Safari 6+ */
 }
 
 .grid-gallery figure img:hover {
@@ -35,9 +36,9 @@
 
 /* Grid style */
 .grid-wrap {
-	max-width: 69em;
+	max-width: 850px;
 	margin: 0 auto;
-	padding: 0 1em 1.875em;
+	padding: 0;
 }
 
 .grid {
@@ -61,8 +62,8 @@
 
 /* Slideshow style */
 .slideshow {
+	background: rgba(0, 0, 0, 0.85);
 	position: fixed;
-	background: rgba(0,0,0,0.6);
 	width: 100%;
 	height: 100%;
 	top: 0;
@@ -106,12 +107,12 @@
 }
 
 .slideshow li {
-	width: 660px;
-	height: 560px;
+	width: 100%;
+	height: 100%;
 	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin: -280px 0 0 -330px;
+	top: 0;
+	left: 0;
+	margin: 0;
 	visibility: hidden;
 }
 
@@ -126,7 +127,6 @@
 	height: 100%;
 	top: 0;
 	left: 0;
-	background: rgba(255,255,255,0.8);
 	-webkit-transition: opacity 0.3s;
 	transition: opacity 0.3s;
 }
@@ -139,14 +139,50 @@
 }
 
 .slideshow figure {
+	position: relative;
 	width: 100%;
 	height: 100%;
-	background: #fff;
-	border: 50px solid #fff;
+	border: 20px solid transparent;
 	overflow: hidden;
 }
 
+.slideshow figure img{
+	width: auto;
+	height: auto;
+	margin: 0 auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.slideshow figure img{
+	max-width: 800px;
+}
+@media screen and (max-height: 999px){
+	.slideshow figure img{
+		max-height: 80vh;
+	}
+}
+@media screen and (min-height: 1000px){
+	.slideshow figure img{
+		max-height: 850px;
+	}
+}
+@media screen and (max-width: 1023px){
+	.slideshow figure img{
+		max-width: 90%;
+	}
+}
+
+@media screen and (max-width: 1599px){
+	.slideshow li figure {
+		background: #fff;
+	}
+}
+
 .slideshow figcaption {
+	display: none;
 	padding-bottom: 20px;
 }
 
@@ -159,7 +195,7 @@
 .slideshow nav span {
 	position: fixed;
 	z-index: 1000;
-	color: #59656c;
+	color: #000;
 	text-align: center;
 	padding: 3%;
 	cursor: pointer;
@@ -172,6 +208,9 @@
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
+.slideshow nav span.nav-prev {
+	left: 0;
+}
 
 .slideshow nav span.nav-next {
 	right: 0;
@@ -180,7 +219,7 @@
 .slideshow nav span.nav-close {
 	top: 0;
 	right: 0;
-	padding: 0.5em 1em;
+	padding: 0.5em 1em;	
 	color: #31373a;
 }
 
@@ -209,9 +248,15 @@ span.nav-close:before {
 	content: "\e602";
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1600px){
+	span.nav-close:before, span.nav-prev:before, span.nav-next:before{
+		color: #dedede; 
+	}
+}
+
+
+@media screen and (min-width: 2000px){
 	span.nav-close:before {
-		color: #fff; 
 		font-size: 1.5em;
 	}
 }
@@ -226,7 +271,7 @@ span.nav-close:before {
 	font-size: 0.7em;
 	padding-top: 30px;
 	text-transform: uppercase;
-	color: #fff;
+	color: #333;
 	letter-spacing: 1px;
 	text-align: center;
 }
@@ -255,10 +300,15 @@ span.nav-close:before {
 
 /* Example media queries (reduce number of columns and change slideshow layout) */
 
-@media screen and (max-width: 60em) {
+@media screen and (max-width: 767px) {
 	/* responsive columns; see "Element sizing" on http://masonry.desandro.com/options.html */
 	.grid li {
-		width: 33.3%;
+		width: 100%;
+	}
+
+	.grid li img{
+		max-width: 340px;
+		margin: 0 auto;
 	}
 
 	.slideshow li {
@@ -269,10 +319,13 @@ span.nav-close:before {
 		margin: 0;
 	}
 
+	.slideshow li figure figcaption {
+		display: none;
+	}
+
 	.slideshow li figure img {
 		width: auto;
 		margin: 0 auto;
-		max-width: 100%;
 	}
 
 	.slideshow nav span,
@@ -281,20 +334,4 @@ span.nav-close:before {
 		padding: 0.3em;
 	}
 
-	.info-keys {
-		display: none;
-	}
-
-}
-
-@media screen and (max-width: 35em) {
-	.grid li {
-		width: 50%;
-	}
-}
-
-@media screen and (max-width: 24em) {
-	.grid li {
-		width: 100%;
-	}
 }

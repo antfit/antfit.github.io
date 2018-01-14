@@ -69,20 +69,22 @@
 		this.gridItems = [].slice.call( this.grid.querySelectorAll( 'li:not(.grid-sizer)' ) );
 		// items total
 		this.itemsCount = this.gridItems.length;
-		// slideshow grid
-		this.slideshow = this.el.querySelector( 'section.slideshow > ul' );
-		// slideshow grid items
-		this.slideshowItems = [].slice.call( this.slideshow.children );
-		// index of current slideshow item
-		this.current = -1;
-		// slideshow control buttons
-		this.ctrlPrev = this.el.querySelector( 'section.slideshow > nav > span.nav-prev' );
-		this.ctrlNext = this.el.querySelector( 'section.slideshow > nav > span.nav-next' );
-		this.ctrlClose = this.el.querySelector( 'section.slideshow > nav > span.nav-close' );
 		// init masonry grid
 		this._initMasonry();
-		// init events
-		this._initEvents();
+		// slideshow grid
+		if(this.el.querySelector('section.slideshow')){
+			this.slideshow = this.el.querySelector( 'section.slideshow > ul' );
+			// slideshow grid items
+			this.slideshowItems = [].slice.call( this.slideshow.children );
+			// index of current slideshow item
+			this.current = -1;
+			// slideshow control buttons
+			this.ctrlPrev = this.el.querySelector( 'section.slideshow > nav > span.nav-prev' );
+			this.ctrlNext = this.el.querySelector( 'section.slideshow > nav > span.nav-next' );
+			this.ctrlClose = this.el.querySelector( 'section.slideshow > nav > span.nav-close' );
+			// init events
+			this._initEvents();
+		}
 	};
 
 	CBPGridGallery.prototype._initMasonry = function() {
@@ -90,7 +92,8 @@
 		imagesLoaded( grid, function() {
 			new Masonry( grid, {
 				itemSelector: 'li',
-				columnWidth: grid.querySelector( '.grid-sizer' )
+				columnWidth: grid.querySelector( '.grid-sizer' ),
+				gutter: 1
 			});
 		});
 	};
