@@ -299,7 +299,7 @@ ul.grid {
 #curly-brace {
   width: 200px;
   position: absolute;
-  right: -65px;
+  right: -75px;
   top: 100px;
   transform: rotate(-90deg); }
   #curly-brace .brace {
@@ -374,6 +374,9 @@ header.landing .feature {
   header.landing .feature > div > span {
     margin-top: 20px;
     display: block; }
+@media screen and (max-width: 767px) {
+  header.landing {
+    background: #000; } }
 @media screen and (max-width: 1023px) {
   header.landing {
     text-align: center; } }
@@ -541,6 +544,9 @@ body.home {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
+  @media screen and (max-width: 767px) {
+    body.home {
+      background: none; } }
   body.home:before {
     content: "";
     position: absolute;
@@ -559,6 +565,9 @@ body.home {
   @media screen and (min-width: 1024px) {
     body.home .strip-item.hide-mob:last-child {
       display: block; } }
+  @media screen and (max-width: 1024px) {
+    body.home .strip-item.show-mob {
+      margin: 0 auto; } }
   body.home .mob-social {
     display: none;
     color: #fff;
