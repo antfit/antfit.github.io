@@ -847,3 +847,7 @@ main {
 
 .no-padding {
   padding: 0; }
+
+article p{
+  font-size:18px;
+}
