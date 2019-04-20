@@ -1,12 +1,15 @@
 <html>
  <head>
-   <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <!-- include ar.js for A-Frame -->
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
  </head>
- <body>
-   <a-scene>
-     <a-gltf-model src="/WIP/models/mega-scene/scene.gltf"></a-gltf-model>
-     <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-     <a-sky color="#ECECEC"></a-sky>
+ <body style='margin : 0px; overflow: hidden;'>
+   <a-scene embedded arjs>
+      <a-gltf-model src="/WIP/models/mega-scene/scene.gltf"></a-gltf-model>
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+      <!-- define a camera which will move according to the marker position -->
+      <a-marker-camera preset='hiro'></a-marker-camera>
    </a-scene>
  </body>
 </html>
