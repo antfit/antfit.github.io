@@ -1,0 +1,22 @@
+<html>
+ <head>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <!-- include ar.js for A-Frame -->
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+ </head>
+ <body style='margin : 0px; overflow: hidden;'>
+   <a-scene embedded arjs>
+        <!-- define your model asset -->
+        <a-assets>
+          <a-asset-item id="obj" src="/WIP/models/POC/POCs.obj"></a-asset-item>
+          <a-asset-item id="mtl" src="/WIP/models/POC/POC.mtl"></a-asset-item>
+        </a-assets>
+        <!-- define a camera which will move according to the marker position -->
+        <a-marker preset='hiro'>
+          <!-- use your gltf model -->
+          <a-entity obj-model="obj: #obj; mtl: #mtl" scale="0.006 0.006 0.006" rotation="0 180 0"></a-entity>
+        </a-marker>
+        <a-entity camera></a-entity>
+   </a-scene>
+ </body>
+</html>
