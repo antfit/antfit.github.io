@@ -11,11 +11,27 @@
         <a-assets>
           <!--a-asset-item id="model" src="https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/models/CesiumMan.gltf"-->
           <a-asset-item id="model" src="/WIP/models/POC4/POC4.glb">
+          <!-- ... -->
+          <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+          <!-- ... -->
         </a-assets>
         <a-marker preset='hiro' smooth="true" smoothCount="1" smoothTolerance="0.01" smoothThreshold="1">
-          <a-entity gltf-model="#model" scale="15 15 15" position="1 2 3"></a-entity>
+          <a-entity gltf-model="#model" scale="5 5 5" position="1 2 3"></a-entity>
         </a-marker>
         <a-entity camera></a-entity>
+
+        <!-- ... -->
+        <a-plane src="#groundTexture" rotation="-90 0 0" width="30" height="30"></a-plane>
+        <!-- ... -->
+
+        <!-- Red directional light shining from the top left. -->
+        <a-light color="red" position="-1 1 0"></a-light>
+
+        <!-- Blue point light, 5 meters in the air. -->
+        <a-light type="point" color="blue" position="0 5 0"></a-light>
+
+        <!-- Dim ambient lighting. -->
+        <a-light type="ambient" color="#222"></a-light>
    </a-scene>
  </body>
 </html>
