@@ -18,12 +18,12 @@
         <!--  smooth="true" smoothCount="1" smoothTolerance="0.01" smoothThreshold="1" -->
         <a-marker preset='hiro'>
           <a-entity gltf-model="#model" scale="2 2 2" position="1 2 3"></a-entity>
+          <!-- ... -->
+          <a-plane src="#groundTexture" rotation="-90 0 0" width="30" height="30"></a-plane>
+          <!-- ... -->
         </a-marker>
         <a-entity camera></a-entity>
 
-        <!-- ... -->
-        <a-plane src="#groundTexture" rotation="-90 0 0" width="30" height="30"></a-plane>
-        <!-- ... -->
 
         <!-- Red directional light shining from the top left. -->
         <a-light color="red" position="-1 1 0"></a-light>
