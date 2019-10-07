@@ -12,8 +12,8 @@
           <!--a-asset-item id="model" src="https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/models/CesiumMan.gltf"-->
           <a-asset-item id="model" src="/WIP/models/POC4/POC4.glb">
         </a-assets>
-        <a-marker preset='hiro' smooth="true">
-          <a-entity gltf-model="#model" scale="5 5 5"></a-entity>
+        <a-marker preset='hiro' smooth="true" smoothCount="1" smoothTolerance="0.01" smoothThreshold="1">
+          <a-entity gltf-model="#model" scale="15 15 15" position="1 2 3"></a-entity>
         </a-marker>
         <a-entity camera></a-entity>
    </a-scene>
