@@ -19,17 +19,17 @@
         <a-marker preset='hiro'>
           <a-entity gltf-model="#model" scale="2 2 2" position="1 2 3"></a-entity>
           <!-- ... -->
-          <a-plane src="#groundTexture" rotation="-90 0 0" width="10" height="10"></a-plane>
+          <a-plane src="#groundTexture" rotation="-90 0 0" width="5" height="5"></a-plane>
           <!-- ... -->
         </a-marker>
         <a-entity camera></a-entity>
 
 
         <!-- Red directional light shining from the top left. -->
-        <a-light color="red" position="-1 1 0"></a-light>
+        <a-light color="#dedede" position="-1 1 0" intensity="0.5"></a-light>
 
         <!-- Blue point light, 5 meters in the air. -->
-        <a-light type="point" color="blue" position="0 5 0"></a-light>
+        <!--a-light type="point" color="blue" position="0 5 0"></a-light-->
 
         <!-- Dim ambient lighting. -->
         <a-light type="ambient" color="#222"></a-light>
